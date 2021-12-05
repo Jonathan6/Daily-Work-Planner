@@ -57,7 +57,7 @@ textarea {
   color: white;
 }
 
-.saveBtn {
+/* .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -69,3 +69,27 @@ textarea {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
+
+.container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.container section {
+  display: flex;
+}
+
+.container div {
+  text-align: end;
+  align-items: spacebetween;
+  width: 3rem;
+}
+
+.container input {
+  line-height: 1.5rem;
+  width: 15rem;
+}
+ */
+
