@@ -3,6 +3,7 @@ var numHours = 24;
 var date = $("#currentDay");
 var container = $(".container");
 var currentHour = moment().format("H");
+var currentDate = moment().format("YYYY MM DD");
 
 var timerInterval = setInterval(function() {
     currentHour = moment().format("H");
@@ -53,15 +54,15 @@ container.on("click", function (event) {
 });
 
 function save() {
-    for (id in scheduleText) {
-        localStorage.setItem(id, scheduleText[id])
-    }
+    localStorage.setItem(currentDate, JSON.stringify(scheduleText));
 }
 
 function load() {
     for (var i = 0; i < localStorage.length; i++) {
         var key = localStorage.key(i);
-        scheduleText[key] = localStorage.getItem(key);
+        if (currentDate === key) {
+            scheduleText = JSON.parse(localStorage.getItem(key));
+        }
     }
 
 }
