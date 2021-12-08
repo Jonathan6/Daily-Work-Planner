@@ -1,3 +1,4 @@
+// Sets the date and time at the top of the page
 var numHours = 24;
 var date = $("#currentDay");
 var container = $(".container");
@@ -8,17 +9,20 @@ var timerInterval = setInterval(function() {
     console.log(currentHour);
 },60000);
 
+
+// Gathering all the block elements into a single variable to change color depending on the time
+
 var blockBank = $(".block");
 console.log(blockBank);
 date[0].textContent = moment().format("dddd, MMM Do hh:mm");
 
 for (var i = 0; i < blockBank.length; i++) {
-    if (currentHour > blockBank[i].dataset.num) {
-        blockBank[i].children[1].style.background = "grey";
-    } else if (currentHour == blockBank[i].dataset.num) {
-        blockBank[i].children[1].style.background = "red"
+    if (currentHour > blockBank[i].textContent) {
+        blockBank[i].style.background = "grey";
+    } else if (currentHour == blockBank[i].textContent) {
+        blockBank[i].style.background = "red"
     } else {
-        blockBank[i].children[1].style.background = "green"
+        blockBank[i].style.background = "green"
     }
 }
 /*
@@ -34,29 +38,19 @@ for (var i = 0; i < blockBank.length; i++) {
         refresh every min
         checks if hour is after the time
 */
+
+// Example of how to use template literals. May use it later to replace html elements to change based on user input
 var authorname = "hello";
 var testEl = $(`<p>${authorname}</p>`);
 
-
-var dataToIndex = 8;
-var inputEls = $(".input");
-var scheduleText = ["","","","","","","","","",""];
+var scheduleText = {};
 
 container.on("click", function (event) {
-    /*  If the event is on a button then
-        we take the corresponding input value
-        set the input as the default
-    */
-   console.log();
-    if (event.target.localName == "button") {
-        var targetIndex = event.target.dataset.num - dataToIndex;
-        var whatWeWant = inputEls[targetIndex - 8].value;
-        scheduleText[targetIndex] = whatWeWant;
+    if (event.target.localName === "button") {
+        scheduleText[event.target.dataset.id] = $("#" + event.target.dataset.id).val();
     }
-//    need the input box
-//      need the text from input box
-//      set it as the default for the input
-//      save it in local storage
+    
+    save();
 });
 
 function save() {
