@@ -13,7 +13,6 @@ var timerInterval = setInterval(function() {
 // Gathering all the block elements into a single variable to change color depending on the time
 
 var blockBank = $(".block");
-console.log(blockBank);
 date[0].textContent = moment().format("dddd, MMM Do hh:mm");
 
 for (var i = 0; i < blockBank.length; i++) {
@@ -48,24 +47,33 @@ var scheduleText = {};
 container.on("click", function (event) {
     if (event.target.localName === "button") {
         scheduleText[event.target.dataset.id] = $("#" + event.target.dataset.id).val();
+        
+        save();
     }
-    
-    save();
 });
 
 function save() {
-    localStorage.setItem("scheduleText", JSON.stringify.scheduleText);
-}
-
-function load() {
-    if (localStorage.getItem("scheduleText") !== null) {
-        scheduleText = JSON.parse(localStorage.getItem("scheduleText"));
+    for (id in scheduleText) {
+        localStorage.setItem(id, scheduleText[id])
     }
 }
 
-function renderSchedule() {
+function load() {
+    for (var i = 0; i < localStorage.length; i++) {
+        var key = localStorage.key(i);
+        scheduleText[key] = localStorage.getItem(key);
+    }
 
 }
+
+function renderSchedule() {
+    for (id in scheduleText) {
+        $("#" + id).val(scheduleText[id]);
+    }
+}
+
+load();
+renderSchedule();
 
 // need to load the page of everything in the local storage
     // we're just making an array to make thing easier
