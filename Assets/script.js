@@ -1,9 +1,14 @@
-// Sets the date and time at the top of the page
+// Settings
 var numHours = 24;
+
 var date = $("#currentDay");
 var container = $(".container");
+var blockBank = $(".block");
+
 var currentHour = moment().format("H");
 var currentDate = moment().format("YYYY MM DD");
+
+var scheduleText = {};
 
 var timerInterval = setInterval(function() {
     currentHour = moment().format("H");
@@ -12,8 +17,6 @@ var timerInterval = setInterval(function() {
 
 
 // Gathering all the block elements into a single variable to change color depending on the time
-
-var blockBank = $(".block");
 date[0].textContent = moment().format("dddd, MMM Do hh:mm");
 
 for (var i = 0; i < blockBank.length; i++) {
@@ -25,25 +28,6 @@ for (var i = 0; i < blockBank.length; i++) {
         blockBank[i].style.background = "green"
     }
 }
-/*
-    make all the hour objects
-        input
-        time
-        enter event listener
-        save local storage
-        load local storage
-    attach all the hour objects
-    use moment to find current time
-    time interval
-        refresh every min
-        checks if hour is after the time
-*/
-
-// Example of how to use template literals. May use it later to replace html elements to change based on user input
-var authorname = "hello";
-var testEl = $(`<p>${authorname}</p>`);
-
-var scheduleText = {};
 
 container.on("click", function (event) {
     if (event.target.localName === "button") {
