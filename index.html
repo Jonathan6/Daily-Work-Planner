@@ -35,9 +35,6 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
-      <!-- I want a tab for time
-            a section for the note for the hour
-          finally a button the save the stuff -->
       <table class="table table-bordered table-hover">
         <thead>
           <tr>
@@ -48,7 +45,7 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row" class="block">6</th>
+            <th scope="row" class="block" data-hour="6">6</th>
             <td colspan="10">
               <div class="input-group mb-3">
                 <input id="0" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
@@ -57,7 +54,7 @@
             <td><button type="button" class="btn btn-outline-primary" data-id="0">Save</button></td>
           </tr>
           <tr>
-            <th scope="row" class="block">7</th>
+            <th scope="row" class="block" data-hour="7">7</th>
             <td colspan="10">
               <div class="input-group mb-3">
                 <input id="1" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
@@ -66,7 +63,7 @@
             <td><button type="button" class="btn btn-outline-primary" data-id="1">Save</button></td>
           </tr>
           <tr>
-            <th scope="row" class="block">8</th>
+            <th scope="row" class="block" data-hour="8">8</th>
             <td colspan="10">
               <div class="input-group mb-3">
                 <input id="2" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
@@ -75,16 +72,16 @@
             <td><button type="button" class="btn btn-outline-primary" data-id="2">Save</button></td>
           </tr>
           <tr>
-            <th scope="row" class="block">9</th>
+            <th scope="row" class="block" data-hour="9">9</th>
             <td colspan="10">
-              <div class="input-group mb-3">
+              <div class="input-group mb-3">  
                 <input id="3" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
               </div>
             </td>
             <td><button type="button" class="btn btn-outline-primary" data-id="3">Save</button></td>
           </tr>
           <tr>
-            <th scope="row" class="block">10</th>
+            <th scope="row" class="block" data-hour="10">10</th>
             <td colspan="10">
               <div class="input-group mb-3">
                 <input id="4" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
@@ -93,7 +90,7 @@
             <td><button type="button" class="btn btn-outline-primary" data-id="4">Save</button></td>
           </tr>
           <tr>
-            <th scope="row" class="block">11</th>
+            <th scope="row" class="block" data-hour="11">11</th>
             <td colspan="10">
               <div class="input-group mb-3">
                 <input id="5" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
@@ -102,7 +99,7 @@
             <td><button type="button" class="btn btn-outline-primary" data-id="5">Save</button></td>
           </tr>
           <tr>
-            <th scope="row" class="block">12</th>
+            <th scope="row" class="block" data-hour="12">12</th>
             <td colspan="10">
               <div class="input-group mb-3">
                 <input id="6" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
@@ -111,7 +108,7 @@
             <td><button type="button" class="btn btn-outline-primary" data-id="6">Save</button></td>
           </tr>
           <tr>
-            <th scope="row" class="block">1</th>
+            <th scope="row" class="block" data-hour="13">1</th>
             <td colspan="10">
               <div class="input-group mb-3">
                 <input id="7" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
@@ -120,7 +117,7 @@
             <td><button type="button" class="btn btn-outline-primary" data-id="7">Save</button></td>
           </tr>
           <tr>
-            <th scope="row" class="block">2</th>
+            <th scope="row" class="block" data-hour="14">2</th>
             <td colspan="10">
               <div class="input-group mb-3">
                 <input id="8" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
@@ -129,7 +126,7 @@
             <td><button type="button" class="btn btn-outline-primary" data-id="8">Save</button></td>
           </tr>
           <tr>
-            <th scope="row" class="block">3</th>
+            <th scope="row" class="block" data-hour="15">3</th>
             <td colspan="10">
               <div class="input-group mb-3">
                 <input id="9" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
@@ -138,7 +135,7 @@
             <td><button type="button" class="btn btn-outline-primary" data-id="9">Save</button></td>
           </tr>
           <tr>
-            <th scope="row" class="block">4</th>
+            <th scope="row" class="block" data-hour="16">4</th>
             <td colspan="10">
               <div class="input-group mb-3">
                 <input id="10" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
@@ -147,7 +144,7 @@
             <td><button type="button" class="btn btn-outline-primary" data-id="10">Save</button></td>
           </tr>
           <tr>
-            <th scope="row" class="block">5</th>
+            <th scope="row" class="block" data-hour="17">5</th>
             <td colspan="10">
               <div class="input-group mb-3">
                 <input id="11" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
@@ -156,7 +153,7 @@
             <td><button type="button" class="btn btn-outline-primary" data-id="11">Save</button></td>
           </tr>
           <tr>
-            <th scope="row" class="block">6</th>
+            <th scope="row" class="block" data-hour="18">6</th>
             <td colspan="10">
               <div class="input-group mb-3">
                 <input id="12" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
